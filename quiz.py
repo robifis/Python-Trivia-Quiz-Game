@@ -49,6 +49,7 @@ def main ():
     # Calling the API and getting the data
     response = requests.get(QUIZ_URL)
     quizDump = response.json()
+    print(quizDump)
 
 # Setting the score to '0'
     score = 0
@@ -102,13 +103,13 @@ def main ():
             answers_to_integer = input('Please enter your answer: ')
             answers_to_integer = int(answer)
 
-        print('The correct answer was: ' + correct_decoded_answer)
+        print('The correct answer is: ' + correct_decoded_answer)
         
         #print(answers_dictionary.keys())
 
         # Adding up the score if the answer is correct
         answer_check = answers_dictionary[answers_to_integer]
-        print('Your answer was '+ answer_check)
+        print('Your answered: '+ answer_check)
 
         if answer_check == correct_decoded_answer:
             score = score + 1
